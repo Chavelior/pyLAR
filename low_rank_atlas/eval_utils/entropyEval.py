@@ -31,6 +31,24 @@ def imageEntropy(image_fn,num_bins=100):
     entropy = __entropy(hist)
     return entropy
 
+
+
+
+uatlas = "/Users/xiaoxiaoliu/work/data/BRATS/BRATS-2/Synthetic_Data/results/Flair/UAB_Flair_8Inputs_MI/L0_Iter5_atlas.nrrd"
+latlas = "/Users/xiaoxiaoliu/work/data/BRATS/BRATS-2/Synthetic_Data/results/Flair/LAB_Flair_8Inputs_MI/L0_Iter5_atlas.nrrd"
+lab= imageEntropy(latlas)
+uab= imageEntropy(uatlas)
+print "lab:",lab
+print "uab:",uab
+
+
+uatlas = "/Users/xiaoxiaoliu/work/data/BRATS/BRATS-2/Synthetic_Data/results/T1/MI/UAB_T1_8Inputs_MI/L0_Iter5_atlas.nrrd"
+latlas = "/Users/xiaoxiaoliu/work/data/BRATS/BRATS-2/Synthetic_Data/results/T1/MI/LAB_T1_8Inputs_MI/L0_Iter5_atlas.nrrd"
+lab= imageEntropy(latlas)
+uab= imageEntropy(uatlas)
+print "lab:",lab
+print "uab:",uab
+
 lab=numpy.zeros(5)
 uab=numpy.zeros(5)
 for i in range(1,6):
@@ -45,13 +63,13 @@ print "uab:",uab
 
 
 
-pl.figure()
-u,=pl.plot(range(1,6),uab,'*-r')
-l,=pl.plot(range(1,6),lab,'o-b')
-pl.xlabel('Iteration')
-pl.xticks(range(1,6),['1','2','3','4','5'])
-pl.xlabel('Iteration')
-pl.ylabel('Entropy')
-pl.legend([u,l],['Unbiased Atlas','Low-rank Atlas'],loc='middle')
+#pl.figure()
+#u,=pl.plot(range(1,6),uab,'*-r')
+#l,=pl.plot(range(1,6),lab,'o-b')
+#pl.xlabel('Iteration')
+#pl.xticks(range(1,6),['1','2','3','4','5'])
+#pl.xlabel('Iteration')
+#pl.ylabel('Entropy')
+#pl.legend([u,l],['Unbiased Atlas','Low-rank Atlas'],loc='middle')
 
 
