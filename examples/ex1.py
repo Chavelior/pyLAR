@@ -1,3 +1,4 @@
+
 """ex1.py
 
 Load a checkerboard image, specify the percentage of outliers
@@ -58,7 +59,7 @@ def main(argv=None):
     sitk.WriteImage(J, sys.argv[3])
 
     # decompose X into L+S
-    L, S, _ = ialm.recover(X)
+    L, S, k, rank_est, non_zero, abs_sum_sparse = ialm.recover(X)
 
     C = sitk.GetImageFromArray(np.asarray(L, dtype=np.uint8))
     sitk.WriteImage(C, sys.argv[4])
