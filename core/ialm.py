@@ -50,10 +50,10 @@ def main(argv=None):
     t0 = time.clock()
     X = np.genfromtxt(options.dat)
     t1 = time.clock()
-    print "data loading took %.2g [sec]" % (t1-t0)
+    print("data loading took %.2g [sec]" % (t1-t0))
 
     m, n = X.shape
-    print "data (%d x %d) loaded in %.2g [sec]" % (m, n, (t1-t0))
+    print("data (%d x %d) loaded in %.2g [sec]" % (m, n, (t1-t0)))
     low_rank, sparse, n_iter = recover(X, options.gam)
 
     if not options.sav is None:
